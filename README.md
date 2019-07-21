@@ -1,23 +1,21 @@
-# RNWeChat
-* 使用ReactNative开发的仿微信客户端，**支持Android和iOS**，欢迎大家给个star或fork，谢谢~~
-* 如果在项目构建过程中有任何问题，欢迎提issue，我有空一定帮忙解答~~
-* 我新建了一个QQ群，各位如果有任何与该项目有关的问题，或者想交流下ReactNative相关的技术，都可以加进来：419213248
-* iOS的朋友如果运行项目出现问题，可以参考<a href="./iOS-README.md">这个文档</a>
-
-# Android扫码下载体验
-<img src='./screenshots/qr-code.png'>
+# rn-wechat
+* 使用React Native开发的仿微信客户端，**支持Android和iOS**，初期项目fork from https://github.com/yubo725/rn-wechat
+* 近期扩展计划:
+* 高版React Native支持,用于生成64位Android apk
+* 界面多语言切换支持
+* 如果在项目构建过程和使用中有任何问题，欢迎提issue
 
 # 运行方法
 1. 克隆代码：
 
 ```
-git clone git@github.com:yubo725/rn-wechat.git
+git clone git@github.com:shibamo/rn-wechat.git
 ```
 
 2. 进入项目根目录并安装依赖：
 
 ```
-cd RNWeChat
+cd rn-wechat
 npm install
 ```
 
@@ -56,6 +54,7 @@ react-native run-ios
 - [ ] 适配刘海屏
 
 # 更新记录
+* 2019-07-19 从https://github.com/yubo725/rn-wechat fork
 * 2019-05-14 服务器迁移，域名更改为rnwechat.yubo.me，原来的代码移到deprecated分支，目前使用dev开发分支，IM采用极光IM
 * 2018-12-22 更新项目，RN为当前的最新版本0.57.8，react-navigation库为当前的最新版本3.x
 * 2018-03-09 删除react-native-camera库和ac-qrcode库，扫一扫功能不可用(由于官方react-native-camera库更新了，导致我的iOS项目里使用一直报错无法解决，遂暂时去掉扫一扫功能，后续解决问题了再恢复)

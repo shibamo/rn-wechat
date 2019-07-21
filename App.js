@@ -1,10 +1,33 @@
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  PixelRatio,
+  StatusBar,
+  FlatList,
+  TouchableHighlight,
+  Platform
+} from "react-native";
+
+//#region 3rd party components
 import {
   createStackNavigator,
   createBottomTabNavigator,
   createAppContainer
 } from "react-navigation";
-import React, { Component } from "react";
+import Toast from "@remobile/react-native-toast";
+import JMessage from "jmessage-react-plugin";
+//#endregion 3rd party components
+
+//#region views
 import TitleBar from "./app/views/TitleBar";
+import ImageAdapter from "./app/views/ImageAdapter";
+import UpgradeDialog from "./app/views/UpgradeDialog";
+//#endregion views
+
+//#region screens
 import ContactsScreen from "./app/screens/ContactsScreen";
 import FindScreen from "./app/screens/FindScreen";
 import MeScreen from "./app/screens/MeScreen";
@@ -27,42 +50,21 @@ import ShakeScreen from "./app/screens/ShakeScreen";
 import SettingsScreen from "./app/screens/SettingsScreen";
 import AddFriendsScreen from "./app/screens/AddFriendsScreen";
 import CreateGroupScreen from "./app/screens/CreateGroupScreen";
+//#endregion screens
+
+//#region utils
 import StorageUtil from "./app/utils/StorageUtil";
 import UpgradeModule from "./app/utils/UpgradeModule";
-import UpgradeDialog from "./app/views/UpgradeDialog";
 import TimeUtil from "./app/utils/TimeUtil";
-import CountEmitter from "./app/event/CountEmitter";
 import Global from "./app/utils/Global";
 import Utils from "./app/utils/Utils";
 import LogUtil from "./app/utils/LogUtil";
-import Toast from "@remobile/react-native-toast";
-import UserInfoUtil from "./app/utils/UserInfoUtil";
 import DBHelper from "./app/utils/DBHelper";
+//#endregion utils
+
+import CountEmitter from "./app/event/CountEmitter";
 import Api from "./app/api/Api";
-import ImageAdapter from "./app/views/ImageAdapter";
-
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Dimensions,
-  PixelRatio,
-  StatusBar,
-  FlatList,
-  TouchableHighlight,
-  Platform
-} from "react-native";
-
-import JMessage from "jmessage-react-plugin";
-
 import TabConfig from "./app/configs/TabNavConfigs";
-
-const receiveCustomMsgEvent = "receivePushMsg";
-const receiveNotificationEvent = "receiveNotification";
-const openNotificationEvent = "openNotification";
-const getRegistrationIdEvent = "getRegistrationId";
 
 const { width } = Dimensions.get("window");
 
