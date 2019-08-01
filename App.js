@@ -66,7 +66,7 @@ import CountEmitter from "./app/event/CountEmitter";
 import Api from "./app/api/Api";
 import TabConfig from "./app/configs/TabNavConfigs";
 
-const { width } = Dimensions.get("window");
+const { width } = Dimensions.get("window").width;
 
 class HomeScreen extends Component {
   static navigationOptions = TabConfig.TAB_WE_CHAT_CONF;
@@ -170,15 +170,18 @@ class HomeScreen extends Component {
         <TitleBar nav={this.props.navigation} />
         <View style={styles.divider} />
         <View style={styles.content}>
-          {this.state.recentConversation.length == 0 ? (
-            <Text style={styles.emptyHintText}>暂无会话消息</Text>
-          ) : (
-            <FlatList
-              data={this.state.recentConversation}
-              renderItem={this.renderItem}
-              keyExtractor={this._keyExtractor}
-            />
-          )}
+          {this.state.recentConversation.length == 0 ? 
+            (
+              <Text style={styles.emptyHintText}>暂无会话消息</Text>
+            ) : 
+            (
+              <FlatList
+                data={this.state.recentConversation}
+                renderItem={this.renderItem}
+                keyExtractor={this._keyExtractor}
+              />
+            )
+          }
         </View>
         <View style={styles.divider} />
         <View
@@ -190,10 +193,10 @@ class HomeScreen extends Component {
             width: width
           }}
         >
-          <UpgradeDialog
-            ref="upgradeDialog"
-            content={this.state.upgradeContent}
-          />
+        <UpgradeDialog
+          ref="upgradeDialog"
+          content={this.state.upgradeContent}
+        />
         </View>
       </View>
     );
